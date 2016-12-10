@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Minimal set of code to write a GraphQL server with Apollo graphql-tools",
   "scripts": {
-    "start": "nodemon ./server.js --exec babel-node",
+    "start": "nodemon ./src/server/graphql-server.js --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ."
   },
@@ -26,8 +26,13 @@
   },
   "homepage": "https://github.com/apollostack/apollo-starter-kit#readme",
   "dependencies": {
+    "apollo-client": "^0.5.18",
     "express": "4.13.4",
-    "graphql-tools": "^0.4.2"
+    "graphql-tag": "^1.1.2",
+    "graphql-tools": "^0.4.2",
+    "react": "^15.4.1",
+    "react-apollo": "^0.7.1",
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "babel-cli": "6.5.1",
@@ -38,10 +43,13 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "6.5.0",
     "casual": "^1.5.8",
-    "eslint": "^2.4.0",
+    "eslint": "^2.13.1",
     "eslint-config-airbnb": "^6.1.0",
+    "eslint-config-standard": "^6.2.1",
     "eslint-plugin-import": "^1.1.0",
-    "eslint-plugin-react": "^4.2.3",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^4.3.0",
+    "eslint-plugin-standard": "^2.0.1",
     "graphql": "^0.5.0",
     "lodash": "^4.17.2",
     "mongoose": "^4.7.2",
