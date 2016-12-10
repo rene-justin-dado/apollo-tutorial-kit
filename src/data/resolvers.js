@@ -1,8 +1,11 @@
-import { Author, View } from './connectors'
+import { Author, View, FortuneCookie } from './connectors'
 const resolvers = {
   Query: {
     author(_, args) {
       return Author.find({ where: args })
+    },
+    getFortuneCookie() {
+      return FortuneCookie
     }
   },
   Author: {
@@ -17,7 +20,7 @@ const resolvers = {
     views(post) {
       return View.findOne({ postId: post.id })
              .then((view) => view.views)
-    }
+    },
   }
 }
 

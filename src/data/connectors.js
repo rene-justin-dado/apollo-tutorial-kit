@@ -1,7 +1,12 @@
-import Sequelize from 'sequelize'
+// mocks data
 import casual from 'casual'
+// SQL database
+import Sequelize from 'sequelize'
 import _ from 'lodash'
+// MongoDB
 import Mongoose from 'mongoose'
+// REST
+import rp from 'request-promise'
 
 /////////////////// SQLite //////////////////////////
 const db = new Sequelize('blog', null, null, {
@@ -76,4 +81,14 @@ db.sync({ force: true }).then(() => {
 });
 /////////////////// Mongo //////////////////////////
 
-export { Author, Post, View };
+/////////////////// REST //////////////////////////
+const FortuneCookie = {
+  getOne() {
+    return rp('http://fortunecookieapi.com/v1/cookie')
+           .then(res => JSON.parse(res))
+           .then(res => res[0].fortune.message)
+  }
+}
+/////////////////// REST //////////////////////////
+
+export { Author, Post, View, FortuneCookie };
